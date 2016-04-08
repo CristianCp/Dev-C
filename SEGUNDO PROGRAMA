@@ -1,0 +1,68 @@
+EJERCICIO
+1. Cargar un vector de 10 enteros y seleccionar el mayor de los 
+enteros almacenados en el vector
+
+
+#include <iostream>
+using namespace std;
+
+// Función operativa
+int mayorv(int v[10])       // Definición de la función
+{							// Inicio función
+	int mayor=0;			// mayor empieza en 0
+	for(int i=0; i<=9; ++i ) // Recorrer el vector de la 1a a la ult pos
+	  if(v[i]>mayor)		// compara el mayor
+	    mayor=v[i];			// almacena el mayor
+	    
+	return(mayor);          // retorne el valor mayor
+}					        // fin función
+
+// Función de interfaz
+// Función que carga un vector con datos
+int leervec(int v[10])    // def función
+{							// inicio función
+   for(int i=0; i<=9; ++i )	// recorra el vector
+   {
+   	cout<<"Escriba dato de la "<<i<<"a posicion-->"; // titulo
+   	cin>>v[i];  // lea cada dato del vector
+   }
+   
+   return(1); // todo ok
+}  // fin función
+
+// Función de interfaz
+// Función que muestra un vector con datos
+int muestravec(int v[10])  // def función
+{    // inicio función
+   for(int i=0; i<=9; ++i )	 // recorra el vector
+      	cout<<v[i]<<"\t"; // muestre cada dato del vector
+   
+   return(1);  // todo ok
+}  // fin función
+
+// Función de interfaz
+int apuntamay(int v[10], int mayor)
+{
+for(int i=0; i<=9; ++i )	 // recorra el vector
+   if(v[i]==mayor)   // si el valor es el mayor
+      cout<<"**\t";  // marquelo
+    else             // sino
+      cout<<"\t";    // siga de largo
+
+return(1);   // todo ok
+}   // fin función
+
+// Función ppal
+// Función de interfaz
+int main()  // def función
+{			// inicio función
+	int v[10]; // declara vector
+	leervec(v);  // lee el vector
+	cout<<"\n\n"; // dos lineas en blanco
+	muestravec(v); // muestra el contenido del vector
+	cout<<"\n";
+	apuntamay(v,mayorv(v));
+	
+//	cout<<"\n\n";  // dos lineas en blanco
+//	cout<<"El valor mayor es "<<mayorv(v); // muestra resultado
+}  // fin función
